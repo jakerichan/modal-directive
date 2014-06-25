@@ -6,9 +6,9 @@
 </div>
 
 <!-- modal content will have access to this controller's scope in the template, while also having it's own isolated scope -->
-<modal-content modal-id="customModal" class="custom-modal">
+<div modal-content="customModal" class="custom-modal">
   <h2>{{scopedModel.name}}</h2`>
   <div>
     {{scopedModel.date | date:'longDate'}}
   </div>
-</modal-content>
+</div>

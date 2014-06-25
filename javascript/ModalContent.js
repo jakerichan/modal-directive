@@ -31,11 +31,14 @@ angular.module('modalApp').directive('modalContent', [
             $element.replaceWith(clone);
             // append scrim to bottom of body
             angular.element(document.getElementsByTagName('body')).append($element);    
+
+            // adds support for use as an attribute value or use modal-id when directive is element
+            $scope.modalKey = $element.attr('modal-content') || $element.attr('modal-id');
+
             // register modal with modal service for modal-trigger to access
             Modal.registerModal({
-              id: $scope.modalId,
-              $scope: $scope,
-              $element: $element
+              id: $scope.modalKey,
+              $scope: $scope
             });
           },
           // post used like a regular link function
@@ -91,7 +94,7 @@ angular.module('modalApp').directive('modalContent', [
             $scope.notify = function (eventString) {
               // emit goes up the chain to scope parents
               $scope.$emit(eventString, {
-                id: $scope.modalId,
+                id: $scope.modalKey,
                 $scope: $scope,
                 $element: $element
               });
@@ -99,7 +102,7 @@ angular.module('modalApp').directive('modalContent', [
 
             $scope.removeModal = function () {
               // unregister inactive modal in service
-              Modal.unregisterModalById($scope.modalId);
+              Modal.unregisterModalById($scope.modalKey);
               $scope.$destroy();
               $element.remove();
             }

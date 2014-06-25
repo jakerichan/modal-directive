@@ -1,0 +1,26 @@
+<html lang="en" ng-app="modalApp">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style/app_style.css" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.7/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.3.0-beta.7/angular-route.min.js"></script>
+    
+    <!-- adds ability to listen for css transition events -->
+    <script src="vendors/modernizr.min.js"></script>
+    
+    <script type="text/javascript" src="javascript/ModalAppConfig.js"></script>
+    <script type="text/javascript" src="javascript/ViewCtrl.js"></script>
+
+    <!-- TransitionNames provides helper to list browser specific transition names -->
+    <script type="text/javascript" src="javascript/TransitionNames.js"></script>
+    <!-- Modal service keeps track of active/listening modals-->
+    <script type="text/javascript" src="javascript/ModalService.js"></script>
+    <!-- Modal content directive registers modal handles DOM manipulation -->
+    <script type="text/javascript" src="javascript/ModalContent.js"></script>
+    <!-- Modal trigger directive tells ModalContent when to show -->
+    <script type="text/javascript" src="javascript/ModalTrigger.js"></script>
+  </head>
+  <body>
+    <div ng-view></div>
+  </body>
+</html>

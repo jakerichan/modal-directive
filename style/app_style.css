@@ -1,0 +1,98 @@
+.modal-trigger {
+  cursor: pointer;
+}
+.modal-trigger:hover {
+  color: blue;
+}
+tr.modal-trigger:hover td {
+  color: blue;
+}
+
+.scrim {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: none;
+}
+
+.scrim-outer {
+  display: table;
+  table-layout: fixed;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.scrim-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+  
+.scrim-overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background: rgba(0,0,0,0.4);
+}
+
+.scrim.show {
+  display: block;
+}
+
+.scrim.animate .scrim-overlay, .scrim.animate .modal-container {
+  opacity: 0;
+}
+
+.scrim.animate.in .scrim-overlay, .scrim.animate.in .modal-container {
+  opacity: 1;
+}
+
+.scrim.animate .modal-container, .scrim.animate .scrim-overlay {
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  -ms-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.scrim.animate.from-top .modal-container {
+  -moz-transform: translate(0%, -180%) scale(0.75);
+  -webkit-transform: translate(0%, -180%) scale(0.75);
+  -o-transform: translate(0%, -180%) scale(0.75);
+  -ms-transform: translate(0%, -180%) scale(0.75);
+  transform: translate(0%, -180%) scale(0.75);
+}
+
+.scrim.animate.in.from-top.show .modal-container {
+  -moz-transform: translate(0%, 0%) scale(1);
+  -webkit-transform: translate(0%, 0%) scale(1);
+  -o-transform: translate(0%, 0%) scale(1);
+  -ms-transform: translate(0%, 0%) scale(1);
+  transform: translate(0%, 0%) scale(1);
+}
+
+.modal-content {
+  float: none;
+  text-align: left;
+  position: relative;
+  background-color: #fff;
+  display: inline-block;
+  padding: 1em;
+  
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  -o-box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  -ms-box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}

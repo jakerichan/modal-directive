@@ -1,0 +1,14 @@
+<h1>View Controller</h1>
+
+<div class="content">
+  <!-- modal-trigger will show the model-content with the same modal-id when clicked -->
+  <button modal-trigger="customModal">Launch Modal</button>
+</div>
+
+<!-- modal content will have access to this controller's scope in the template, while also having it's own isolated scope -->
+<modal-content modal-id="customModal" class="custom-modal">
+  <h2>{{scopedModel.name}}</h2`>
+  <div>
+    {{scopedModel.date | date:'longDate'}}
+  </div>
+</modal-content>
